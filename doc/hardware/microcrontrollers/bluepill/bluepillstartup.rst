@@ -1,6 +1,8 @@
 Blue Pill Startup
 =================
 
+The main goal for startup is to get a Mecrisp Stellaris .hex file loaded onto the Blue Pill board.
+
 Items needed to get started
 ---------------------------
 

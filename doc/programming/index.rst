@@ -4,6 +4,7 @@ Programming
 .. toctree::
    :maxdepth: 1
 
-   forth
+   forth/index
    fat32
+   general/index
 

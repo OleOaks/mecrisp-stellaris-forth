@@ -7,9 +7,9 @@
 Mecrisp-Stellaris-Forth
 =======================
 
-**Do you already have a STM32 Blue Pill board? see** :doc:`/hardware/microcrontrollers/bluepill/bluepillstartup`.
+**Already have a STM32 Blue Pill board? see** :doc:`/hardware/microcrontrollers/bluepill/bluepillstartup`.
 
-**Do you already have a STM32 Black Pill board? see** :doc:`/hardware/microcrontrollers/blackpill/blackpillstartup`.
+**Already have a STM32 Black Pill board? see** :doc:`/hardware/microcrontrollers/blackpill/blackpillstartup`.
 
 What is Mecrisp-Stellaris-Forth?
 --------------------------------
@@ -22,8 +22,8 @@ Forth was writting by `Charles Moore 1970`_, and can be run on Windows, Linux, a
 
 .. _Mecrisp-Stellaris-Forth: https://sourceforge.net/projects/mecrisp/
 
-Why I like Forth
-----------------
+Why Learn Forth
+---------------
 
 Forth is a breath of fresh air that allows (ahem... maybe forces) me to know how a computer is actually working when executing my programs. I'm the type of person that likes to understand how things work under the hood in order to really grasp concepts. I've done my fair share of Arduino code as well as plain C without Arduino; yes, I know Arduino is just C or C++ wrapped up in an easy to use ide. But, I invariably run into problems during project development where I get stuck trying to do something 'out-of-the-box' but don't understand all of the code being imported behind the scenes or from multiple libraries. Don't get me wrong, Arduino and C are excellent for developing embedded electronics, but I'm very curious and not content with blindly using functions or objects that hide functionality. Yes, I could go read/study those libraries, but there is no substitution for understanding a library when you have to write your own! For simple programs, there is no doubt that using Arduino or the STM32CubeIDE would be quicker for getting a board up and running. But for me, there is immense satisfaction in understanding practically everything happening down to the bit level on my board. 
 
