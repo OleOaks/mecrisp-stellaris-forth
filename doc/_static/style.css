@@ -6,3 +6,10 @@
     background-color: green;
 }
 
+pre.literal-block, div[class^='highlight'] pre, .linenodiv pre {
+    font-size: 3.50em;
+}
+
+.code-block-caption {
+    text-align: left
+}

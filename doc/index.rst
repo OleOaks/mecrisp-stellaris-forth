@@ -45,7 +45,7 @@ I also want to give back to the Forth community. I'm standing on the shoulders o
 .. image:: _images/Mecrisp-stellaris-forth.png
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 6
 
    hardware/index
    programming/index

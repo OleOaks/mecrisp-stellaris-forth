@@ -2,7 +2,7 @@ Hardware
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
 
    microcrontrollers/index
    optoelectronics/index

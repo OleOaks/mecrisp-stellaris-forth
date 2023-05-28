@@ -8,7 +8,7 @@ Items needed to get started
 
 The following items are needed to flash Forth onto a new Blue Pill:
 
-Don't worry, if you ever want to go back to Arduino just 
+Don't worry, if you ever want to go back to Arduino, just flash a new program using Arduino. There are no special steps needed to go back-and-forth between Forth and Arduino.
 
 .. list-table::
    :widths: 20 40
@@ -19,7 +19,7 @@ Don't worry, if you ever want to go back to Arduino just
    * - Hardware
      - :doc:`/hardware/microcrontrollers/bluepill/index`
    * - Software
-     - :doc:`/programming/forth`
+     - :doc:`/programming/forth/forth`
    * - Programmer Software
      - :doc:`/workbench/software/stm32cubeprogrammer`
    * - Programmer Dongle
@@ -35,7 +35,8 @@ Things to know
 Wire the ST-LINK programmer
 ---------------------------
 
-**WARNING -- Your STLINK-V2 may have different pinouts. I have multiple dongles and some have the SWDIO, SWCLK, and GND pins in different locations... Check the printing on your dongle, don't blindly use the image below as yours may be slightly different!**
+.. warning::
+    Your STLINK-V2 may have different pinouts. I have multiple dongles and some have the SWDIO, SWCLK, and GND pins in different locations... Check the printing on your dongle, don't blindly use the image below as yours may be slightly different!**
 
 Only four wires are needed to flash Forth onto the blue pill *(be sure your pin names are correct)*.
 

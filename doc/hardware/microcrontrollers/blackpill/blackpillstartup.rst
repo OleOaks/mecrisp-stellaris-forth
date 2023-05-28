@@ -17,7 +17,7 @@ Don't worry, if you ever want to go back to Arduino just
    * - Hardware
      - :doc:`/hardware/microcrontrollers/bluepill/index`
    * - Software
-     - :doc:`/programming/forth`
+     - :doc:`/programming/forth/forth`
    * - Programmer Software
      - :doc:`/workbench/software/stm32cubeprogrammer`
    * - Programmer Dongle
@@ -33,7 +33,8 @@ Things to know
 Wiring the ST-LINK programmer
 -----------------------------
 
-**WARNING -- Your STLINK-V2 may have different pinouts. I have multiple dongles and some have the SWDIO, SWCLK, and GND pins in different locations... Check the printing on your dongle, don't blindly use the image below as yours may be slightly different!**
+.. warning::
+    Your STLINK-V2 may have different pinouts. I have multiple dongles and some have the SWDIO, SWCLK, and GND pins in different locations... Check the printing on your dongle, don't blindly use the image below as yours may be slightly different!**
 
 Only four wires are needed to flash Forth onto the BlackPill *(be sure your pin names are correct)*.
 

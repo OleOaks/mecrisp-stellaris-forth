@@ -1,0 +1,51 @@
+/* :root {
+    --pst-font-size-base: 24px;
+    --pst-sidebar-font-size: 2.0em;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+
+body {
+    font-size: 1.50em;
+}
+
+code, html {
+    font-size: 3.0em;
+}
+
+p {
+    font-size: 1.0em;
+    line-height: 120%;
+}
+
+span {
+    font-size: 1.0em;
+}
+
+.highlight {
+    font-size: 3.50em;
+}
+
+div.highlight-default.notranslate {
+    font-size: 3.50em;
+}
+*/
+
+html {
+    font-size: 1.50em;
+}
+
+code {
+    font-size: 3.0em;
+}
+
+pre.literal-block, div[class^='highlight'] pre, .linenodiv pre {
+    font-size: 3.50em;
+}
+
+.code-block-caption {
+    text-align: left
+}
+
