@@ -5,7 +5,10 @@ Forth
    :maxdepth: 2
 
    forth
-   memory
-   variables
-   datastructures
+   assembler/assembler
+   startup/startup
+   memory/memory
+   variables/variables
+   datastructures/datastructures
+   compiler/compiler
 

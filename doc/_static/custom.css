@@ -33,19 +33,54 @@ div.highlight-default.notranslate {
 }
 */
 
+/* does not affect code block */
 html {
     font-size: 1.50em;
 }
 
 code {
-    font-size: 3.0em;
-}
-
-pre.literal-block, div[class^='highlight'] pre, .linenodiv pre {
-    font-size: 3.50em;
+    font-size: 9.0em;
 }
 
 .code-block-caption {
     text-align: left
 }
 
+h1 {
+    font-size: 2.00em;
+}
+
+li {
+    line-height: 1.5em;
+}
+
+li::marker {
+    font-size: 1.0em;
+}
+
+
+/* Inline code using `` `` */
+ code.docutils.literal.notranslate {
+     font-size: 1.10em;
+}
+
+/* color affects code block, but can't get font-size to affect it */
+div.highlight {
+    font-size: xx-large;
+    /* color: red; */
+}
+
+
+/*
+Does not affect code block
+p {
+    font-size: 5.00em;
+}
+*/
+
+/* 
+Does not affect code block
+body {
+    font-size: 5.00em;
+}
+*/

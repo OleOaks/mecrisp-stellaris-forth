@@ -1,16 +1,6 @@
 Variables
 =========
 
-What is a variable?
--------------------
-
-Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
-
-.. rubric:: Footnotes
-
-.. [#f1] Text of the first footnote.
-.. [#f2] Text of the second footnote.
-
 Creating variables in forth is easy, but the whole story is a bit more complicated. When you create a new variable, multiple separate actions for being performed. A variable is really like a function, when you execute the name of the variable the internal code for the variable will respond by putting the address where the value of the variable is stored on the stack.
 
 1. *Create dictionary word* - A new word is created in the dictionary for the variable using the name you type. Machine code is created that will return the memory address where the value of the variable is stored. 
@@ -47,11 +37,11 @@ After creating the variable, the following words were used to analyze:
 
 ``see`` comes from the dump.fs file packaged with mecrisp-stellaris-forth zip file. It decompiles the machine code stored in the dictionary and lists the assembly pseudocode as well as the machine code together.
 
-``myvar hex.`` is the typical use for a variable. ``myvar`` executes the code listed above which places the address where the value is stored onto the stack. ``hex.`` is used to print the value of the address to the screen in hexadecimal.
+``myvar`` is the typical use for a variable. ``myvar`` executes the code listed above which places the address where the value is stored onto the stack. ``hex.`` is used to print the value of the address to the screen in hexadecimal.
 
-``' myvar hex.`` has lesser use, but returns the address for the executable code location.
+``' myvar`` has lesser use, but returns the address for the executable code location.
 
-``myvar @ hex.`` prints the value stored at the address that was placed on the stack. The ``@`` word will return 4-bytes of memory starting at the address on the top of the stack. In this case, we put the address on the stack with ``myvar``.
+``myvar @`` gets the value stored at the address that was placed on the stack. The ``@`` word will return 4-bytes of memory starting at the address on the top of the stack. In this case, we put the address on the stack with ``myvar``.
 
 ----
 
@@ -62,23 +52,25 @@ A quick sidebar on the importantance of recognizing that a variable has no knowl
 
 Example fetch words:
 
-``c@ ( c-addr -- char )`` - Fetches 1-byte, one value goes on the stack
+``c@`` ( c-addr -- char ) - Fetches 1-byte, one value goes on the stack
 
-``h@ ( c-addr -- char )`` - Fetches 2-bytes, one value goes on the stack
+``h@`` ( c-addr -- char ) - Fetches 2-bytes, one value goes on the stack
 
-``@  ( a-addr -- u|n )`` - Fetches 4-bytes, one value goes on the stack
+``@``  ( a-addr -- u|n ) - Fetches 4-bytes, one value goes on the stack
 
-``2@ ( a-addr -- ud|d )`` - Fetches 8-bytes, two 4-byte values go on the stack
+``2@`` ( a-addr -- ud|d ) - Fetches 8-bytes, two 4-byte values go on the stack
 
-``move ( c-addr1 c-addr2 u -- )`` - Fetches u number of bytes from c-addr1, but they don't get stored on the stack, they get stored at c-addr2.
+``move`` ( c-addr1 c-addr2 u -- ) - Fetches u number of bytes from c-addr1, but they don't get stored on the stack, they get stored at c-addr2.
 
 ----
 
-Variable words
+Variable Words
 --------------
 
-``variable``
-************
+These are standard Mecrisp-Stellaris-Forth words:
+
+VARIABLE
+********
 
 Creates and seeds a dictionary word with 4-bytes of storage. 
 
@@ -107,8 +99,8 @@ Creates and seeds a dictionary word with 4-bytes of storage.
 
      *...Produces this output*
 
-``2variable``
-*************
+2VARIABLE
+*********
 
 .. code-block::
     :linenos:
@@ -133,8 +125,8 @@ Creates and seeds a dictionary word with 4-bytes of storage.
     
     *...Produces this output*
 
-``nvariable``
-*************
+NVARIABLE
+*********
 
 Creates and seeds a dictionary word with up to 15 words ( 60-bytes ) of storage.
 

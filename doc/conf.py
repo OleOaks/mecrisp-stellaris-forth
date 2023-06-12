@@ -90,7 +90,8 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 #
 html_theme_options = {
-    "body_max_width": "none",
+    #"body_max_width": "none",
+    'body_max_width': 1024,
     'navigation_depth': -1,
     'collapse_navigation': False
 }
