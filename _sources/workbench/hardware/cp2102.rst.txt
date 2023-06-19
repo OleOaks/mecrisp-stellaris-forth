@@ -1,0 +1,9 @@
+CP2102 USB to UART
+==================
+
+During project development this little board allows communication to your microcrontroller through a serial port.
+
+Four pins are used... RXI, TXD, GND, 3V3
+
+.. image:: cp2102.png
+

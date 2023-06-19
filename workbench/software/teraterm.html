@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tera Term &mdash; Mecrisp-Stellaris-Forth 0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="VIM" href="vim.html" />
+    <link rel="prev" title="STM32 Cube Programmer" href="stm32cubeprogrammer.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Mecrisp-Stellaris-Forth
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/microcrontrollers/index.html">Microcrontrollers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/index.html">STM32F103C8T6 BluePill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html">Blue Pill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html#wire-the-st-link-programmer">Wire the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/bluepillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/microcrontrollers/bluepill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/index.html">STM32F411CEU6 BlackPill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html">BlackPill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html#wiring-the-st-link-programmer">Wiring the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/blackpillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/microcrontrollers/blackpill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/optoelectronics/index.html">Optoelectronics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/optoelectronics/leds/index.html">LEDs (Light emitting diodes)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/optoelectronics/leds/leds.html">LEDs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/optoelectronics/displays/index.html">Displays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/optoelectronics/displays/ssd1306oled.html">SSD1306 OLDED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/optoelectronics/displays/max7219matrix.html">MAX7219 Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/optoelectronics/displays/max7219sevensegment.html">MAX7219 7-Segment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/integratedcircuits/index.html">Integrated Circuits (ICs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/integratedcircuits/memory.html">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/integratedcircuits/clocktiming.html">Clock/Timing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/integratedcircuits/sdcard/index.html">SD-Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hardware/integratedcircuits/sdcard/sdcard.html">SD-Cards</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../hardware/integratedcircuits/sdcard/sdcard.html#unfinished">Unfinished…</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/sensors/index.html">Sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/sensors/hx711loadcell.html">HX711 Load Cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware/sensors/bme280temphumid.html">BME280 Temperature/Humidity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/index.html">Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/forth/index.html">Forth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/forth.html">FORTH Programming Language</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/forth.html#where-to-get-the-software">Where to get the software?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/assembler/assembler.html">Assembler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/assembler/assembler.html#registers">Registers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/assembler/assembler.html#variable-v-constant">Variable v Constant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/startup/startup.html">Startup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/startup/startup.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/startup/startup.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/memory/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/memory/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/memory/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/variables/variables.html">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/variables/variables.html#anatomy-of-a-variable">Anatomy of a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/variables/variables.html#fetch-words">Fetch words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/variables/variables.html#variable-words">Variable Words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/variables/variables.html#variable">VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/variables/variables.html#id1">2VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/variables/variables.html#nvariable">NVARIABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/variables/variables.html#appending-words">Appending words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/variables/variables.html#id2"><code class="docutils literal notranslate"><span class="pre">variable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html">Data Structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#arrays">Arrays</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#array">1ARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#carray">1CARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#array-rng">1ARRAY-RNG</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#id1">2ARRAY</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#classes">Classes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#class">CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#field">FIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#variant">VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#start-variants">START-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#end-variant">END-VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#end-all-variants">END-ALL-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#insert">INSERT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#end-class">END-CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#afield">1AFIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#instance">INSTANCE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#m-instance">M-INSTANCE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#enumerations">Enumerations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/datastructures/datastructures.html#enum">ENUM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html">Source Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html#make">Make</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html#memory">Memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html#changes">Changes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html#flash-size">Flash Size</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/forth/sourcecode/sourcecode.html#greeting">Greeting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/forth/sourcecode/analyzesourcecode.html">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/general/index.html">General Programming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/general/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/general/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../programming/general/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Workbench Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Software Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stm32cubeprogrammer.html">STM32 Cube Programmer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="stm32cubeprogrammer.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stm32cubeprogrammer.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stm32cubeprogrammer.html#flashing-forth-quicksteps">Flashing Forth Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stm32cubeprogrammer.html#flashing-forth-screenshots">Flashing Forth screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tera Term</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-tera-term-quicksteps">Setup Tera Term Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tera-term-setup-screenshots">Tera Term setup screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html">VIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware/index.html">Hardware used in lab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/logicanalyzer.html">Logic Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/oscilloscope.html">Oscilloscope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/breadboard.html">Breadboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/multimeter.html">Multimeter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/stlinkv2.html">ST-LINK V2 Programming Dongle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/stlinkv2.html#purpose">Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/stlinkv2.html#what-to-buy">What to buy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/cp2102.html">CP2102 USB to UART</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Mecrisp-Stellaris-Forth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Workbench Tools</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Software Tools</a></li>
+      <li class="breadcrumb-item active">Tera Term</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/workbench/software/teraterm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tera-term">
+<h1>Tera Term<a class="headerlink" href="#tera-term" title="Permalink to this heading"></a></h1>
+<section id="what-s-this-used-for">
+<h2>What’s this used for?<a class="headerlink" href="#what-s-this-used-for" title="Permalink to this heading"></a></h2>
+<p>The normal way of communcating with Forth is through a VT100 serial terminal emulator, one example being the free open-source Tera Term.</p>
+<p>Forth provides a command line through USART which is typically connected through an inexpensive USART to USB serial converter like a <a class="reference internal" href="../hardware/cp2102.html"><span class="doc">CP2102 USB to UART</span></a> board. The CP2102 plugs into a usb port on the computer with which Term Term communicates.</p>
+</section>
+<section id="where-to-get-it">
+<h2>Where to get it?<a class="headerlink" href="#where-to-get-it" title="Permalink to this heading"></a></h2>
+<p>Tera Term is freely downloaded from <a class="reference external" href="https://ttssh2.osdn.jp/index.html.en">Tera Term homepage</a>.</p>
+</section>
+<section id="setup-tera-term-quicksteps">
+<h2>Setup Tera Term Quicksteps<a class="headerlink" href="#setup-tera-term-quicksteps" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Plug the <a class="reference internal" href="../hardware/cp2102.html"><span class="doc">CP2102 USB to UART</span></a> board into computer.</p></li>
+<li><p>Open the Tera Term application. (It defaults to a TCP/IP connection)</p></li>
+<li><p>Select the ‘Serial’ connection option, and click ‘OK’. (a COM port should be displayed in the ‘Port:’ textbox).</p></li>
+<li><p>Goto ‘Setup’ –&gt; ‘Serial’ dialog.</p></li>
+<li><p>Change ‘Speed’ to 115200, or whatever your Forth installation will default to. Then click ‘New setting’ to dismiss the dialog box.</p></li>
+<li><p>Hit the ‘Enter’ key on your keyboard. You should see an ‘ok.’ response from Forth!</p></li>
+<li><p>Goto ‘Setup’ –&gt; ‘Terminal’ dialog.</p></li>
+<li><p>Change the New-line Receive value from ‘CR’ to ‘LF’, then click ‘OK’ to dismiss the dialog box.</p></li>
+<li><p>Goto ‘Setup’ –&gt; ‘Font’ – ‘Font’ dialog.</p></li>
+<li><p>I change the font to ‘Courier New’ and the size to ‘12’, then click ‘OK’ to dismiss the dialog box.</p></li>
+<li><p>The default Tera Term window size is a bit small, stretch it to a comfortable size.</p></li>
+<li><p>Goto ‘Setup’ –&gt; ‘Save setup…’ and create a filename to remember these settings.</p></li>
+<li><p>The next time you open Tera Term, goto ‘Setup’ –&gt; ‘Restore setup…’ and find your saved settings.</p></li>
+</ol>
+<p>Press the reset button on the microcrontroller, a startup message should be displayed in Tera Term…</p>
+<p><code class="docutils literal notranslate"><span class="pre">Mecrips-Stellaris</span> <span class="pre">2.6.5</span> <span class="pre">for</span> <span class="pre">STM32F103</span> <span class="pre">by</span> <span class="pre">Matthias</span> <span class="pre">Koch</span></code></p>
+</section>
+<section id="tera-term-setup-screenshots">
+<h2>Tera Term setup screenshots<a class="headerlink" href="#tera-term-setup-screenshots" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id1">
+<img alt="../../_images/teraterm_open.png" src="../../_images/teraterm_open.png" />
+<figcaption>
+<p><span class="caption-text"><em>Defaults to a TCP/IP connection when first opened</em></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../../_images/teraterm_selectserial.png" src="../../_images/teraterm_selectserial.png" />
+<figcaption>
+<p><span class="caption-text"><em>Select the ‘Serial’ connection option, then click ‘OK’</em></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="../../_images/teraterm_serialdialog.png" src="../../_images/teraterm_serialdialog.png" />
+<figcaption>
+<p><span class="caption-text"><em>Goto ‘Setup’ –&gt; ‘Serial port…’ dialog box</em></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="../../_images/teraterm_baud.png" src="../../_images/teraterm_baud.png" />
+<figcaption>
+<p><span class="caption-text"><em>Change ‘Speed’ to 115200, or whatever your Forth installation requires</em></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="../../_images/teraterm_ok.png" src="../../_images/teraterm_ok.png" />
+<figcaption>
+<p><span class="caption-text"><em>Press the ‘Enter’ key on your keyboard. You should see an ‘ok.’ response from Forth!</em></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<img alt="../../_images/teraterm_terminaldialog.png" src="../../_images/teraterm_terminaldialog.png" />
+<figcaption>
+<p><span class="caption-text"><em>Goto ‘Setup’ –&gt; ‘Terminal’ dialog box</em></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<img alt="../../_images/teraterm_lf.png" src="../../_images/teraterm_lf.png" />
+<figcaption>
+<p><span class="caption-text"><em>Change the New-line Receive value from ‘CR to ‘LF’, then click ‘OK’ to dismiss the dialog box</em></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<img alt="../../_images/teraterm_fontdialog.png" src="../../_images/teraterm_fontdialog.png" />
+<figcaption>
+<p><span class="caption-text"><em>Goto ‘Setup’ –&gt; ‘Font’ – ‘Font’ dialog box</em></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id9">
+<img alt="../../_images/teraterm_font.png" src="../../_images/teraterm_font.png" />
+<figcaption>
+<p><span class="caption-text"><em>Optionally – Change the font to ‘Courier New’ and the size to ‘12’, then click ‘OK’ to dismiss the dialog box</em></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="11">
+<li><p>Resize the Tera Term window if it’s too small for normal use</p></li>
+</ol>
+<figure class="align-default" id="id10">
+<img alt="../../_images/teraterm_savedialog.png" src="../../_images/teraterm_savedialog.png" />
+<figcaption>
+<p><span class="caption-text"><em>Goto ‘Setup’ –&gt; ‘Save setup..’ and create a filename to remember these settings</em></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="../../_images/teraterm_restoredialog.png" src="../../_images/teraterm_restoredialog.png" />
+<figcaption>
+<p><span class="caption-text"><em>The next time you open Tera Term, goto ‘Setup’ –&gt; ‘Restore setup…’ and find your saved settings</em></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="stm32cubeprogrammer.html" class="btn btn-neutral float-left" title="STM32 Cube Programmer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vim.html" class="btn btn-neutral float-right" title="VIM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Brett Olson, released under the GPL V3. Last updated on May 17, 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

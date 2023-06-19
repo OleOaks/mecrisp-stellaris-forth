@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common Code to Flash &mdash; Mecrisp-Stellaris-Forth 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="STM32F411CEU6 BlackPill" href="../blackpill/index.html" />
+    <link rel="prev" title="Memory Model of the Blue Pill" href="memorymodel.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Mecrisp-Stellaris-Forth
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Hardware</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Microcrontrollers</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">STM32F103C8T6 BluePill</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="bluepillstartup.html">Blue Pill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="bluepillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="bluepillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="bluepillstartup.html#wire-the-st-link-programmer">Wire the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="bluepillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="bluepillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="bluepillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Common Code to Flash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../blackpill/index.html">STM32F411CEU6 BlackPill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../blackpill/blackpillstartup.html">BlackPill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../blackpill/blackpillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../blackpill/blackpillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../blackpill/blackpillstartup.html#wiring-the-st-link-programmer">Wiring the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../blackpill/blackpillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../blackpill/blackpillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../blackpill/blackpillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../blackpill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../blackpill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../optoelectronics/index.html">Optoelectronics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../optoelectronics/leds/index.html">LEDs (Light emitting diodes)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../optoelectronics/leds/leds.html">LEDs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../optoelectronics/displays/index.html">Displays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../optoelectronics/displays/ssd1306oled.html">SSD1306 OLDED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optoelectronics/displays/max7219matrix.html">MAX7219 Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optoelectronics/displays/max7219sevensegment.html">MAX7219 7-Segment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../integratedcircuits/index.html">Integrated Circuits (ICs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../integratedcircuits/memory.html">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../integratedcircuits/clocktiming.html">Clock/Timing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../integratedcircuits/sdcard/index.html">SD-Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../integratedcircuits/sdcard/sdcard.html">SD-Cards</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../integratedcircuits/sdcard/sdcard.html#unfinished">Unfinished…</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../sensors/index.html">Sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../sensors/hx711loadcell.html">HX711 Load Cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../sensors/bme280temphumid.html">BME280 Temperature/Humidity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programming/index.html">Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../programming/forth/index.html">Forth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/forth.html">FORTH Programming Language</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/forth.html#where-to-get-the-software">Where to get the software?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/assembler/assembler.html">Assembler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/assembler/assembler.html#registers">Registers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/assembler/assembler.html#variable-v-constant">Variable v Constant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/startup/startup.html">Startup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/startup/startup.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/startup/startup.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/memory/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/memory/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/memory/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/variables/variables.html">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/variables/variables.html#anatomy-of-a-variable">Anatomy of a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/variables/variables.html#fetch-words">Fetch words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/variables/variables.html#variable-words">Variable Words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/variables/variables.html#variable">VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/variables/variables.html#id1">2VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/variables/variables.html#nvariable">NVARIABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/variables/variables.html#appending-words">Appending words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/variables/variables.html#id2"><code class="docutils literal notranslate"><span class="pre">variable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html">Data Structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#arrays">Arrays</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#array">1ARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#carray">1CARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#array-rng">1ARRAY-RNG</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#id1">2ARRAY</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#classes">Classes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#class">CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#field">FIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#variant">VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#start-variants">START-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#end-variant">END-VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#end-all-variants">END-ALL-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#insert">INSERT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#end-class">END-CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#afield">1AFIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#instance">INSTANCE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#m-instance">M-INSTANCE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#enumerations">Enumerations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/datastructures/datastructures.html#enum">ENUM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html">Source Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html#make">Make</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html#memory">Memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html#changes">Changes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html#flash-size">Flash Size</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/forth/sourcecode/sourcecode.html#greeting">Greeting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/forth/sourcecode/analyzesourcecode.html">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../programming/general/index.html">General Programming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../programming/general/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../programming/general/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../programming/general/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workbench/index.html">Workbench Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/software/index.html">Software Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html">STM32 Cube Programmer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#flashing-forth-quicksteps">Flashing Forth Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#flashing-forth-screenshots">Flashing Forth screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/teraterm.html">Tera Term</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#setup-tera-term-quicksteps">Setup Tera Term Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#tera-term-setup-screenshots">Tera Term setup screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/vim.html">VIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/hardware/index.html">Hardware used in lab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/logicanalyzer.html">Logic Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/oscilloscope.html">Oscilloscope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/breadboard.html">Breadboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/multimeter.html">Multimeter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html">ST-LINK V2 Programming Dongle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html#purpose">Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html#what-to-buy">What to buy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/cp2102.html">CP2102 USB to UART</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Mecrisp-Stellaris-Forth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Microcrontrollers</a></li>
+          <li class="breadcrumb-item"><a href="index.html">STM32F103C8T6 BluePill</a></li>
+      <li class="breadcrumb-item active">Common Code to Flash</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/hardware/microcrontrollers/bluepill/commoncode.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="common-code-to-flash">
+<h1>Common Code to Flash<a class="headerlink" href="#common-code-to-flash" title="Permalink to this heading"></a></h1>
+<p>Hi again!</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="memorymodel.html" class="btn btn-neutral float-left" title="Memory Model of the Blue Pill" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../blackpill/index.html" class="btn btn-neutral float-right" title="STM32F411CEU6 BlackPill" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Brett Olson, released under the GPL V3. Last updated on May 17, 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

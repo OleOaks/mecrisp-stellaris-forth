@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variables &mdash; Mecrisp-Stellaris-Forth 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Data Structures" href="../datastructures/datastructures.html" />
+    <link rel="prev" title="Memory" href="../memory/memory.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Mecrisp-Stellaris-Forth
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/microcrontrollers/index.html">Microcrontrollers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/index.html">STM32F103C8T6 BluePill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html">Blue Pill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#wire-the-st-link-programmer">Wire the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/index.html">STM32F411CEU6 BlackPill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html">BlackPill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#wiring-the-st-link-programmer">Wiring the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/optoelectronics/index.html">Optoelectronics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/optoelectronics/leds/index.html">LEDs (Light emitting diodes)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/leds/leds.html">LEDs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/optoelectronics/displays/index.html">Displays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/displays/ssd1306oled.html">SSD1306 OLDED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/displays/max7219matrix.html">MAX7219 Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/displays/max7219sevensegment.html">MAX7219 7-Segment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/integratedcircuits/index.html">Integrated Circuits (ICs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/integratedcircuits/memory.html">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/integratedcircuits/clocktiming.html">Clock/Timing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/integratedcircuits/sdcard/index.html">SD-Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/integratedcircuits/sdcard/sdcard.html">SD-Cards</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/integratedcircuits/sdcard/sdcard.html#unfinished">Unfinished…</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/sensors/index.html">Sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/sensors/hx711loadcell.html">HX711 Load Cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/sensors/bme280temphumid.html">BME280 Temperature/Humidity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Programming</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Forth</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../forth.html">FORTH Programming Language</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../forth.html#where-to-get-the-software">Where to get the software?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../assembler/assembler.html">Assembler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../assembler/assembler.html#registers">Registers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../assembler/assembler.html#variable-v-constant">Variable v Constant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../startup/startup.html">Startup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../startup/startup.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../startup/startup.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../memory/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../memory/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../memory/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anatomy-of-a-variable">Anatomy of a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fetch-words">Fetch words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variable-words">Variable Words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#variable">VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id1">2VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nvariable">NVARIABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#appending-words">Appending words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">variable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../datastructures/datastructures.html">Data Structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../datastructures/datastructures.html#arrays">Arrays</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#array">1ARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#carray">1CARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#array-rng">1ARRAY-RNG</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#id1">2ARRAY</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../datastructures/datastructures.html#classes">Classes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#class">CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#field">FIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#variant">VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#start-variants">START-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#end-variant">END-VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#end-all-variants">END-ALL-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#insert">INSERT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#end-class">END-CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#afield">1AFIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#instance">INSTANCE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#m-instance">M-INSTANCE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../datastructures/datastructures.html#enumerations">Enumerations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../datastructures/datastructures.html#enum">ENUM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sourcecode/sourcecode.html">Source Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#make">Make</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#memory">Memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#changes">Changes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../sourcecode/sourcecode.html#flash-size">Flash Size</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../sourcecode/sourcecode.html#greeting">Greeting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sourcecode/analyzesourcecode.html">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../general/index.html">General Programming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../general/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../general/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../general/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workbench/index.html">Workbench Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/software/index.html">Software Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html">STM32 Cube Programmer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#flashing-forth-quicksteps">Flashing Forth Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#flashing-forth-screenshots">Flashing Forth screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/teraterm.html">Tera Term</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#setup-tera-term-quicksteps">Setup Tera Term Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#tera-term-setup-screenshots">Tera Term setup screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/vim.html">VIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/hardware/index.html">Hardware used in lab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/logicanalyzer.html">Logic Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/oscilloscope.html">Oscilloscope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/breadboard.html">Breadboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/multimeter.html">Multimeter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html">ST-LINK V2 Programming Dongle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html#purpose">Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html#what-to-buy">What to buy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/cp2102.html">CP2102 USB to UART</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Mecrisp-Stellaris-Forth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Programming</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Forth</a></li>
+      <li class="breadcrumb-item active">Variables</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/programming/forth/variables/variables.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h1>
+<p>Creating variables in forth is easy, but the whole story is a bit more complicated. When you create a new variable, multiple separate actions for being performed. A variable is really like a function, when you execute the name of the variable the internal code for the variable will respond by putting the address where the value of the variable is stored on the stack.</p>
+<ol class="arabic simple">
+<li><p><em>Create dictionary word</em> - A new word is created in the dictionary for the variable using the name you type. Machine code is created that will return the memory address where the value of the variable is stored.</p></li>
+<li><p><em>Add space to store a value</em> - Depending on the forth word, space may be reserved in the dictionary to accomodate a certain number of bytes to hold the variable value. The address where this value is stored is returned when you type the variable name into the terminal.</p></li>
+<li><p><em>Initialize with a given value</em> - Depending on the forth word, a value may be stored into the space that was created.</p></li>
+</ol>
+<hr class="docutils" />
+<section id="anatomy-of-a-variable">
+<h2>Anatomy of a variable<a class="headerlink" href="#anatomy-of-a-variable" title="Permalink to this heading"></a></h2>
+<p>Below is a screenshot of the variable named <code class="docutils literal notranslate"><span class="pre">myvar</span></code> with the value <code class="docutils literal notranslate"><span class="pre">$DEADBEEF</span></code>. Also shown is a memory dump of the actual variable as it’s stored in memory. The memory consists of three main parts:</p>
+<ul class="simple">
+<li><p><em>Header</em> - Contains three sub-parts</p>
+<ul>
+<li><p>4-bytes for a link to the address of the next word in the dictionary. (GREEN)</p></li>
+<li><p>2-bytes for any flags used by forth. (YELLOW)</p></li>
+<li><p>n-bytes contains two items.</p>
+<ul>
+<li><p>1-byte holds the number of letters in the name of the word. (first byte of BLUE)</p></li>
+<li><p>n-bytes holds the ascii characters for the variable name. May be padded with an extra byte to keep the code block aligned. (BLUE)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Code block</em> - Contains n-bytes of machine code that get executed when the variable name is used. i.e. The code needed to place the address of the value on the stack</p></li>
+<li><p><em>Storage block</em> - Contains n-bytes of memory where the actual value of the variable is stored. (RED)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that a 32-bit value needs 4-bytes of storage, but the variable below requires 28-bytes of memory for the entire variable. Variables are not free, and depending on the length of the name you use, it requires 1-byte of additional memory for each additional character in the name.</p>
+</div>
+<img alt="../../../_images/variable_anatomy.png" src="../../../_images/variable_anatomy.png" />
+<p>After creating the variable, the following words were used to analyze:</p>
+<p><code class="docutils literal notranslate"><span class="pre">dump-word</span></code> is a custom word I created to print the memory and calcute the number of bytes used in memory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">see</span></code> comes from the dump.fs file packaged with mecrisp-stellaris-forth zip file. It decompiles the machine code stored in the dictionary and lists the assembly pseudocode as well as the machine code together.</p>
+<p><code class="docutils literal notranslate"><span class="pre">myvar</span></code> is the typical use for a variable. <code class="docutils literal notranslate"><span class="pre">myvar</span></code> executes the code listed above which places the address where the value is stored onto the stack. <code class="docutils literal notranslate"><span class="pre">hex.</span></code> is used to print the value of the address to the screen in hexadecimal.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">myvar</span></code> has lesser use, but returns the address for the executable code location.</p>
+<p><code class="docutils literal notranslate"><span class="pre">myvar</span> <span class="pre">&#64;</span></code> gets the value stored at the address that was placed on the stack. The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> word will return 4-bytes of memory starting at the address on the top of the stack. In this case, we put the address on the stack with <code class="docutils literal notranslate"><span class="pre">myvar</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="fetch-words">
+<h2>Fetch words<a class="headerlink" href="#fetch-words" title="Permalink to this heading"></a></h2>
+<p>A quick sidebar on the importantance of recognizing that a variable has no knowledge of it’s type, i.e. It doesn’t know how much memory is allocated to it. Therefore, you are free to fetch any number of bytes from the address given, even if it doesn’t match the number of bytes that were originally used to create the variable. This is a double edged sword, if you use the wrong fetch word, you may get a bad surprise when it doesn’t contain what you thought it should; but, this is a great feature for concepts like arrays where you allocated a block of data for the variable with the intention of selectively fetching different bytes like indexing into an array.</p>
+<p>Example fetch words:</p>
+<p><code class="docutils literal notranslate"><span class="pre">c&#64;</span></code> ( c-addr – char ) - Fetches 1-byte, one value goes on the stack</p>
+<p><code class="docutils literal notranslate"><span class="pre">h&#64;</span></code> ( c-addr – char ) - Fetches 2-bytes, one value goes on the stack</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code>  ( a-addr – u|n ) - Fetches 4-bytes, one value goes on the stack</p>
+<p><code class="docutils literal notranslate"><span class="pre">2&#64;</span></code> ( a-addr – ud|d ) - Fetches 8-bytes, two 4-byte values go on the stack</p>
+<p><code class="docutils literal notranslate"><span class="pre">move</span></code> ( c-addr1 c-addr2 u – ) - Fetches u number of bytes from c-addr1, but they don’t get stored on the stack, they get stored at c-addr2.</p>
+</section>
+<hr class="docutils" />
+<section id="variable-words">
+<h2>Variable Words<a class="headerlink" href="#variable-words" title="Permalink to this heading"></a></h2>
+<p>These are standard Mecrisp-Stellaris-Forth words:</p>
+<section id="variable">
+<h3>VARIABLE<a class="headerlink" href="#variable" title="Permalink to this heading"></a></h3>
+<p>Creates and seeds a dictionary word with 4-bytes of storage.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">This forth code…</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ Example 32-bit variable
+<span class="linenos"> 2</span>$DEADBEEF variable myvar
+<span class="linenos"> 3</span>dump-word myvar
+<span class="linenos"> 4</span>see myvar
+<span class="linenos"> 5</span>myvar hex.
+<span class="linenos"> 6</span>&#39; myvar hex.
+<span class="linenos"> 7</span>myvar @ hex.
+<span class="linenos"> 8</span>myvar c@ hex.
+<span class="linenos"> 9</span>myvar 1 + c@ hex.
+<span class="linenos">10</span>myvar 2 + c@ hex.
+<span class="linenos">11</span>myvar 3 + c@ hex.
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how the hex value $DEADBEEF appears in memory as EF-BE-AD-DE. This is due to little-endian format. Forth stores the least significant byte in memory first. The reason it’s not stored completely reversed, as in FE-EB-DA-ED, is because the smallest addressable chunk the processor works on is a byte. A byte ( 0-255 ) needs two hex digits ( $0-$FF ), thus individual hex digits are not reversed in a byte.</p>
+<p>Also, you may observe that the name of the word <code class="docutils literal notranslate"><span class="pre">myvar</span></code> is shown in the dump as <code class="docutils literal notranslate"><span class="pre">myvar</span></code> and not reversed. Simplified, little-endian applies to multi-byte phrases, like a 32-bit number that needs 4-bytes, but for text the ascii characters are thought of as their own little byte-size number with no connection to the other characters in a string. It’s just the way most languages apply little-endian.</p>
+</div>
+<figure class="align-default" id="id4">
+<img alt="../../../_images/variable_myvar.png" src="../../../_images/variable_myvar.png" />
+<figcaption>
+<p><span class="caption-text"><em>…Produces this output</em></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id1">
+<h3>2VARIABLE<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">This forth code…</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ Example 64-bit variable
+<span class="linenos"> 2</span>$DEADBEEF 123456 2variable my2var
+<span class="linenos"> 3</span>dump-word my2var
+<span class="linenos"> 4</span>see my2var
+<span class="linenos"> 5</span>my2var hex.
+<span class="linenos"> 6</span>&#39; my2var hex.
+<span class="linenos"> 7</span>my2var c@ hex.
+<span class="linenos"> 8</span>my2var h@ hex.
+<span class="linenos"> 9</span>my2var @ hex.
+<span class="linenos">10</span>my2var 2@ hex. hex.
+<span class="linenos">11</span>my2var 2@ .s
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The stack only holds 32-bit values. This is the reason two values were entered prior to calling the <code class="docutils literal notranslate"><span class="pre">2variable</span></code> word. The same holds true for fetching the value, <code class="docutils literal notranslate"><span class="pre">2&#64;</span></code> places two 32-bit values on the stack.</p>
+</div>
+<figure class="align-default" id="id6">
+<img alt="../../../_images/variable_my2var.png" src="../../../_images/variable_my2var.png" />
+<figcaption>
+<p><span class="caption-text"><em>…Produces this output</em></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="nvariable">
+<h3>NVARIABLE<a class="headerlink" href="#nvariable" title="Permalink to this heading"></a></h3>
+<p>Creates and seeds a dictionary word with up to 15 words ( 60-bytes ) of storage.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">This forth code…</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ Example multi-bit variable
+<span class="linenos"> 2</span>$AAAAAAAA 123456 $BBBBBBBB 0 $DEADBEEF 5 nvariable mynvar
+<span class="linenos"> 3</span>dump-word mynvar
+<span class="linenos"> 4</span>see mynvar
+<span class="linenos"> 5</span>mynvar hex.
+<span class="linenos"> 6</span>&#39; mynvar hex.
+<span class="linenos"> 7</span>mynvar c@ hex.
+<span class="linenos"> 8</span>mynvar 8 + c@ hex.
+<span class="linenos"> 9</span>mynvar 8 + @ hex.
+<span class="linenos">10</span>mynvar 4 cells + .
+</pre></div>
+</div>
+</div>
+<figure class="align-default" id="id8">
+<img alt="../../../_images/variable_mynvar.png" src="../../../_images/variable_mynvar.png" />
+<figcaption>
+<p><span class="caption-text"><em>…Produces this output</em></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<hr class="docutils" />
+<section id="appending-words">
+<h2>Appending words<a class="headerlink" href="#appending-words" title="Permalink to this heading"></a></h2>
+<section id="id2">
+<h3><code class="docutils literal notranslate"><span class="pre">variable</span></code><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>Creates and seeds a dictionary word with 4-bytes of storage.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../memory/memory.html" class="btn btn-neutral float-left" title="Memory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../datastructures/datastructures.html" class="btn btn-neutral float-right" title="Data Structures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Brett Olson, released under the GPL V3. Last updated on May 17, 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

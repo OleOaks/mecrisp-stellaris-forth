@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Structures &mdash; Mecrisp-Stellaris-Forth 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Source Code" href="../sourcecode/sourcecode.html" />
+    <link rel="prev" title="Variables" href="../variables/variables.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Mecrisp-Stellaris-Forth
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/microcrontrollers/index.html">Microcrontrollers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/index.html">STM32F103C8T6 BluePill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html">Blue Pill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#wire-the-st-link-programmer">Wire the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/bluepillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/bluepill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/index.html">STM32F411CEU6 BlackPill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html">BlackPill Startup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#items-needed-to-get-started">Items needed to get started</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#things-to-know">Things to know</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#wiring-the-st-link-programmer">Wiring the ST-LINK programmer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#flash-with-the-stm32cubeprogrammer">Flash with the STM32CubeProgrammer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#wire-the-cp2102-usart">Wire the CP2102 USART</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/blackpillstartup.html#setup-serial-console">Setup Serial Console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/memorymodel.html">Memory Model of the Blue Pill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/microcrontrollers/blackpill/commoncode.html">Common Code to Flash</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/optoelectronics/index.html">Optoelectronics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/optoelectronics/leds/index.html">LEDs (Light emitting diodes)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/leds/leds.html">LEDs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/optoelectronics/displays/index.html">Displays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/displays/ssd1306oled.html">SSD1306 OLDED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/displays/max7219matrix.html">MAX7219 Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/optoelectronics/displays/max7219sevensegment.html">MAX7219 7-Segment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/integratedcircuits/index.html">Integrated Circuits (ICs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/integratedcircuits/memory.html">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/integratedcircuits/clocktiming.html">Clock/Timing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/integratedcircuits/sdcard/index.html">SD-Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/integratedcircuits/sdcard/sdcard.html">SD-Cards</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../hardware/integratedcircuits/sdcard/sdcard.html#unfinished">Unfinished…</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware/sensors/index.html">Sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/sensors/hx711loadcell.html">HX711 Load Cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../hardware/sensors/bme280temphumid.html">BME280 Temperature/Humidity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Programming</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Forth</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../forth.html">FORTH Programming Language</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../forth.html#where-to-get-the-software">Where to get the software?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../assembler/assembler.html">Assembler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../assembler/assembler.html#registers">Registers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../assembler/assembler.html#variable-v-constant">Variable v Constant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../startup/startup.html">Startup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../startup/startup.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../startup/startup.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../memory/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../memory/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../memory/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../variables/variables.html">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../variables/variables.html#anatomy-of-a-variable">Anatomy of a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../variables/variables.html#fetch-words">Fetch words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../variables/variables.html#variable-words">Variable Words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../variables/variables.html#variable">VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../variables/variables.html#id1">2VARIABLE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../variables/variables.html#nvariable">NVARIABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../variables/variables.html#appending-words">Appending words</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../variables/variables.html#id2"><code class="docutils literal notranslate"><span class="pre">variable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arrays">Arrays</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#array">1ARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#carray">1CARRAY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#array-rng">1ARRAY-RNG</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id1">2ARRAY</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#class">CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#field">FIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#variant">VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#start-variants">START-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#end-variant">END-VARIANT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#end-all-variants">END-ALL-VARIANTS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#insert">INSERT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#end-class">END-CLASS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#afield">1AFIELD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#instance">INSTANCE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#m-instance">M-INSTANCE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#enumerations">Enumerations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#enum">ENUM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sourcecode/sourcecode.html">Source Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#make">Make</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#memory">Memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sourcecode/sourcecode.html#changes">Changes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../sourcecode/sourcecode.html#flash-size">Flash Size</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../sourcecode/sourcecode.html#greeting">Greeting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sourcecode/analyzesourcecode.html">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../general/index.html">General Programming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../general/memory.html">Memory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../general/memory.html#the-basics">The Basics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../general/memory.html#bits">Bits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workbench/index.html">Workbench Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/software/index.html">Software Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html">STM32 Cube Programmer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#flashing-forth-quicksteps">Flashing Forth Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/stm32cubeprogrammer.html#flashing-forth-screenshots">Flashing Forth screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/teraterm.html">Tera Term</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#what-s-this-used-for">What’s this used for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#where-to-get-it">Where to get it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#setup-tera-term-quicksteps">Setup Tera Term Quicksteps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/software/teraterm.html#tera-term-setup-screenshots">Tera Term setup screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/software/vim.html">VIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/hardware/index.html">Hardware used in lab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/logicanalyzer.html">Logic Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/oscilloscope.html">Oscilloscope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/breadboard.html">Breadboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/multimeter.html">Multimeter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html">ST-LINK V2 Programming Dongle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html#purpose">Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../workbench/hardware/stlinkv2.html#what-to-buy">What to buy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workbench/hardware/cp2102.html">CP2102 USB to UART</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Mecrisp-Stellaris-Forth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Programming</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Forth</a></li>
+      <li class="breadcrumb-item active">Data Structures</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/programming/forth/datastructures/datastructures.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-structures">
+<h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this heading"></a></h1>
+<p>The goal of this page is to create a library of Data Structures. The words are derived from chapter 11 of a book by James D. Terry found in the Internet Archives called…</p>
+<iframe src="https://archive.org/embed/libraryofforthro00terr#page/n266/mode/2up" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe><p><em>Ctrl+Click to follow the link to the Internet Archives book, then go to page 266</em></p>
+<p>Most likely, I wouldn’t include this entire library in my common code section because there are so many words with slight variations. Practically, when the need arrises I would just copy/paste the specific word definitions I acutally use into my project code.</p>
+<hr class="docutils" />
+<section id="arrays">
+<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading"></a></h2>
+<section id="array">
+<h3>1ARRAY<a class="headerlink" href="#array" title="Permalink to this heading"></a></h3>
+<p>Create a new defining word that is used to then create multiple one-dimensional arrays of any size. Defining words are created with <code class="docutils literal notranslate"><span class="pre">&lt;BUILDS</span></code> to define built-in code to run when the new variable is created, and <code class="docutils literal notranslate"><span class="pre">DOES&gt;</span></code> to define code for a run-time action each time the variable name is executed.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1ARRAY</span></code> should take a number argument representing the number of 32-bit elements ( 4-byte ) blocks of memory to reserve for the array</p></li>
+<li><p>The created variables, e.g. <code class="docutils literal notranslate"><span class="pre">my1array</span></code>,  should take a number argument representing the 0-based index of the memory address returned from executing the variable name</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">1ARRAY forth code</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ ===================================================================
+<span class="linenos"> 2</span>\ ONE-DIMENSIONAL ARRAY OF 32-BIT ELEMENTS
+<span class="linenos"> 3</span>\ -------------------------------------------------------------------
+<span class="linenos"> 4</span>: 1ARRAY ( BUILDS: N -- ) ( DOES: N -- a-addr )
+<span class="linenos"> 5</span>&lt;BUILDS
+<span class="linenos"> 6</span>    HERE SWAP cells DUP ALLOT 0 FILL
+<span class="linenos"> 7</span>DOES&gt;
+<span class="linenos"> 8</span>    SWAP cells +
+<span class="linenos"> 9</span>;
+<span class="linenos">10</span>\ Build example  : 10 1ARRAY my1array  \ Creates a 10 element 1-dimensional array of 32-bit values
+<span class="linenos">11</span>\ Does example  1: 765 4 my1array !    \ Stores the value 765 in the 4th element of the my1array array
+<span class="linenos">12</span>\ Does example #2: 4 my1array @ .      \ Puts the value 765 on the stack from the 4th element of the my1array array, and prints it to screen
+</pre></div>
+</div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BUILDS</span></code> code explained:</p>
+<ul class="simple">
+<li><p>The number of cells (N) desired should already be on the stack prior to calling <code class="docutils literal notranslate"><span class="pre">1ARRAY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HERE</span></code> puts the current dictionary memory address on the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> moves N to the top of the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELLS</span></code> calculates byte size of N cells, i.e. N * 4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the stack value of the number of bytes just calculated</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALLOT</span></code> advances the dictionary pointer by the number of bytes needed, i.e. it allocates N * 4 bytes to the new variable for storage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> is the value we want to initialize all the storage bytes. The current memory storage has random values leftover</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILL</span></code> takes three arguments ( c-addr u c ) which are already on the stack from the previous steps. u bytes are written with a value of c starting at c-addr</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOES&gt;</span></code> explained:</p>
+<ul class="simple">
+<li><p>The index value the ith 0-based array should already be on the stack prior to calling variable name, e.g. <code class="docutils literal notranslate"><span class="pre">my1array</span></code></p></li>
+<li><p>By default, when the variable name is executed, the starting address of the array elements is put on the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> puts the array index at the top of the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cells</span></code> multiplies the array index by four, which is the offset ( in bytes ) where the ith array element starts in memory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> adds the offset to the starting address of the array elements, which becomes the memory address for the ith array element.</p></li>
+</ul>
+<p>So, <code class="docutils literal notranslate"><span class="pre">1ARRAY</span></code> is similar to normal variables in that a memory address is left on the stack. it’s different than normal variables in that it needs an index value ( the ith element ) put on the stack prior to calling the variable name</p>
+</li>
+</ul>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/datastruct_1array.png" src="../../../_images/datastruct_1array.png" />
+<figcaption>
+<p><span class="caption-text"><em>…1ARRAY examples. No value storage here, this is the machine code for creating 1Array variables</em></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Test Code</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>\ my1array
+<span class="linenos">2</span>10 1array my1array
+<span class="linenos">3</span>dump-word my1array
+<span class="linenos">4</span>765 4 my1array !
+<span class="linenos">5</span>dump-word my1array
+<span class="linenos">6</span>4 my1array @ .
+</pre></div>
+</div>
+</div>
+<figure class="align-default" id="id5">
+<img alt="../../../_images/datastruct_my1array.png" src="../../../_images/datastruct_my1array.png" />
+<figcaption>
+<p><span class="caption-text"><em>…my1ARRAY examples. Each new variable will have 40-bytes of memory storage ( 32 / 8 * 10 )</em></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<hr class="docutils" />
+<section id="carray">
+<h3>1CARRAY<a class="headerlink" href="#carray" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1CARRAY</span></code> should take a number argument representing the number of 8-bit elements ( 1-byte ) blocks of memory to reserve for the array</p></li>
+<li><p>The created variables, e.g. <code class="docutils literal notranslate"><span class="pre">my1carray</span></code>,  should take a number argument representing the 0-based index of the memory address returned from executing the variable name</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">1CARRAY forth code</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ ===================================================================
+<span class="linenos"> 2</span>\ ONE-DIMENSIONAL ARRAY OF 8-BIT ( 1-Byte ) ELEMENTS
+<span class="linenos"> 3</span>\ -------------------------------------------------------------------
+<span class="linenos"> 4</span>: 1CARRAY ( BUILDS: N -- ) ( DOES: N -- c-addr )
+<span class="linenos"> 5</span>&lt;BUILDS
+<span class="linenos"> 6</span>    HERE SWAP DUP ALLOT 0 FILL
+<span class="linenos"> 7</span>DOES&gt;
+<span class="linenos"> 8</span>    +
+<span class="linenos"> 9</span>;
+<span class="linenos">10</span>\ Build example  : 10 1CARRAY my1carray \ Creates a 10 element 1-dimensional array of 8-bit values
+<span class="linenos">11</span>\ Does example  1: $A5 4 my1carray C!    \ Stores the value 165 in the 4th element of the my1carray array
+<span class="linenos">12</span>\ Does example  2: 4 my1carray C@        \ Puts the value 165 on the stack from the 4th element of the my1carray array
+<span class="linenos">13</span>\ Does example  3: CHAR H 4 my1carray C! \ Stores the value 72 in the 4th element of the my1carray array
+</pre></div>
+</div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BUILDS</span></code> code explained:</p>
+<ul class="simple">
+<li><p>The number of bytes (N) desired should already be on the stack prior to calling <code class="docutils literal notranslate"><span class="pre">1CARRAY</span></code>. <em>Stack ( N )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HERE</span></code> puts the current dictionary memory address on the stack. <em>Stack ( N c-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> moves N to the top of the stack. <em>Stack ( c-addr N )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the stack value of the number of bytes. <em>Stack ( c-addr N N )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALLOT</span></code> advances the dictionary pointer by the number of bytes needed, i.e. it allocates N bytes to the new variable for storage. <em>Stack ( c-addr N )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> is the value we want to initialize all the storage bytes. The current memory storage has random values leftover. <em>Stack ( c-addr N 0 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILL</span></code> takes three arguments ( c-addr u c ) which are already on the stack from the previous steps. u bytes are written with a value of c starting at c-addr. <em>Stack ( )</em></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOES&gt;</span></code> explained:</p>
+<ul class="simple">
+<li><p>The index value the ith 0-based array should already be on the stack prior to calling variable name, e.g. <code class="docutils literal notranslate"><span class="pre">my1carray</span></code>. <em>Stack ( index )</em></p></li>
+<li><p>By default, when the variable name is executed, the starting address of the array elements is put on the stack. <em>Stack ( index c-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> adds the offset to the starting address of the array elements, which becomes the memory address for the ith array element. <em>Stack ( elem-addr )</em></p></li>
+</ul>
+<p>So, <code class="docutils literal notranslate"><span class="pre">1CARRAY</span></code> is similar to normal variables in that a memory address is left on the stack. it’s different than normal variables in that it needs an index value ( the ith element ) put on the stack prior to calling the variable name</p>
+</li>
+</ul>
+<figure class="align-default" id="id7">
+<img alt="../../../_images/datastruct_1carray.png" src="../../../_images/datastruct_1carray.png" />
+<figcaption>
+<p><span class="caption-text"><em>…1CARRAY examples. No value storage here, this is the machine code for creating 1CArray variables</em></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Test Code</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>\ my1carray
+<span class="linenos">2</span>10 1carray my1carray
+<span class="linenos">3</span>dump-word my1carray
+<span class="linenos">4</span>$A5 4 my1carray c!
+<span class="linenos">5</span>dump-word my1carray
+<span class="linenos">6</span>4 my1carray c@
+<span class="linenos">7</span>char H 4 my1carray c!
+<span class="linenos">8</span>dump-word my1carray
+</pre></div>
+</div>
+</div>
+<figure class="align-default" id="id9">
+<img alt="../../../_images/datastruct_my1carray.png" src="../../../_images/datastruct_my1carray.png" />
+<figcaption>
+<p><span class="caption-text"><em>…my1CARRAY examples. Each new variable will have 10-bytes of memory storage</em></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<hr class="docutils" />
+<section id="array-rng">
+<h3>1ARRAY-RNG<a class="headerlink" href="#array-rng" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1ARRAY-RNG</span></code> should take a number argument representing the number of 8-bit elements ( 1-byte ) blocks of memory to reserve for the array</p></li>
+<li><p>The created variables, e.g. <code class="docutils literal notranslate"><span class="pre">my1array-rng</span></code>,  should take a number argument representing the 0-based index of the memory address returned from executing the variable name</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">1CARRAY forth code</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ ===================================================================
+<span class="linenos"> 2</span>\ ONE-DIMENSIONAL ARRAY OF 32-BIT ELEMENTS --&gt; WITH RANGED INDICES
+<span class="linenos"> 3</span>\ -------------------------------------------------------------------
+<span class="linenos"> 4</span>: 1ARRAY-RNG ( BUILDS: N1 N2 -- ) ( DOES: N -- a-addr )
+<span class="linenos"> 5</span>&lt;BUILDS
+<span class="linenos"> 6</span>    SWAP DUP , - 1+
+<span class="linenos"> 7</span>    HERE SWAP CELLS DUP ALLOT 0 FILL
+<span class="linenos"> 8</span>DOES&gt;
+<span class="linenos"> 9</span>    DUP @ ROT SWAP - CELLS CELL+ +
+<span class="linenos">10</span>;
+<span class="linenos">11</span>\ Build example  : 1940 1986 1ARRAY-RNG my1array-rng \ Creates a 47 element 1-dimensional array of 32-bit elements with index ranges from 1940 to 1986 inclusive.
+<span class="linenos">12</span>\ Does example   : 105 1940 my1array-rng ! \ Stores the value 105 in the 1st element of the my1array-rng array
+<span class="linenos">13</span>\ Does example   : $DEADBEEF 1985 my1array-rng ! \ Stores the value $DEADBEEF in the second to last element of the my1array-rng array
+<span class="linenos">14</span>\ Does example   : 1985 my1array-rng @ hex. \ Prints the value of the seconde to last element of the my1array-rng array
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BUILDS</span></code> code explained:</p>
+<ul>
+<li><p>The lower (N1) and upper (N2) index ranges should already be on the stack prior to calling <code class="docutils literal notranslate"><span class="pre">1ARRAY-RNG</span></code>. <em>Stack ( N1 N2 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> puts the lower (N1) value at the top of the stack. <em>Stack ( N2 N1 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the lower (N1) value on the stack. <em>Stack ( N2 N1 N1 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">,</span></code> advances the dictionary pointer by one cell (4-bytes) and fills the cell with the lower (N1) value. This is key, the lower bound value is permanently stored with the variable and will be used later to de-range the indexes back to 0-based. <em>Stack ( N2 N1 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> subtracts ( N2 - N1 ) to determine the number of 32-bit elements to create memory for. <em>Stack ( rawnumcells )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1+</span></code> adds 1 to the number of elements which fixes the ‘fence-post’ issue of counting. i.e. 5 - 2 = 3, but the intention is to have a memory location for 2,3,4,5 which is 4 elements. <em>Stack ( numcells )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HERE</span></code> puts the current dictionary memory address on the stack. <em>Stack ( numcells a-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> moves number of cells to the top of the stack. <em>Stack ( a-addr numcells )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELLS</span></code> multiplies numcells by 4 to get number of bytes. <em>Stack ( a-addr numbytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the stack value of the number of bytes. <em>Stack ( a-addr numbytes numbytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALLOT</span></code> advances the dictionary pointer by the number of bytes needed, i.e. it allocates N*4 additional bytes to the new variable for storage. <em>Stack ( a-addr numbytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> is the value we want to initialize all the storage bytes. The current memory storage has random values leftover. <em>Stack ( a-addr numbytes 0 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILL</span></code> takes three arguments ( c-addr u c ) which are already on the stack from the previous steps. u bytes are written with a value of c starting at c-addr. <em>Stack ()</em></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOES&gt;</span></code> explained:</p>
+<ul>
+<li><p>The ranged index value should already be on the stack prior to calling variable name, e.g. <code class="docutils literal notranslate"><span class="pre">my1array-rng</span></code>. <em>Stack ( rngindex )</em></p></li>
+<li><p>By default, when the variable name is executed, the starting address of storage memory is put on the stack, i.e. the address for the lower bound that was stored with the variable. <em>Stack ( rngindex c-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the address of the storage memory. <em>Stack ( rngindex c-addr c-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> get 4-byte contents of the storage memory address. i.e. get the lower bound value for this variable. <em>Stack ( rngindex c-addr lbound )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROT</span></code> brings the requested range index to top of stack. <em>Stack ( c-addr lbound rngindex )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> switches the lower bound and requested range on the stack. <em>Stack ( c-addr rngindex lbound )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> subtracts ( rngindex - lbound ) which equals the ith element that needs to be revealed. <em>Stack ( c-addr eleoffset )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELLS</span></code> multiplies element index by 4 to get number of bytes. <em>Stack ( c-addr eleoffsetbytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELL+</span></code> adds one cell to account for the lower bound cell. <em>Stack ( c-addr totaloffset )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> adds the offset to the starting address of the variable storage memory, which becomes the memory address for the ith array element. <em>Stack ( ele-addr )</em></p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default" id="id11">
+<img alt="../../../_images/datastruct_1array-rng.png" src="../../../_images/datastruct_1array-rng.png" />
+<figcaption>
+<p><span class="caption-text"><em>…1ARRAY-RNG examples. No value storage here, this is the machine code for creating 1Array-rng variables</em></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Use the word <code class="docutils literal notranslate"><span class="pre">1ARRAY-RNG</span></code> to create a new variable called <code class="docutils literal notranslate"><span class="pre">my1array-rng</span></code></span><a class="headerlink" href="#id12" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>\ my1array-rng
+<span class="linenos">2</span>1940 1986 1array-rng my1array-rng  \ Create a new array
+<span class="linenos">3</span>dump-word 1array-rng               \ Inspect the new array
+<span class="linenos">4</span>105 1940 my1array-rng !            \ Store a value in the array
+<span class="linenos">5</span>$DEADBEEF 1985 my1array-rng !      \ Store another value in the array
+<span class="linenos">6</span>dump-word my1array-rng             \ Inspect the array with stored values
+<span class="linenos">7</span>1985 my1array-rng @ hex.           \
+</pre></div>
+</div>
+</div>
+<figure class="align-default" id="id13">
+<img alt="../../../_images/datastruct_my1array-rng.png" src="../../../_images/datastruct_my1array-rng.png" />
+<figcaption>
+<p><span class="caption-text"><em>…my1ARRAY-RNG examples. Each new variable will have 10-bytes of memory storage</em></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>2ARRAY<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>Create a new word that will be used to create two-dimensional arrays of 32-bit values.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2ARRAY</span></code> should take two numbers from the stack representing the number of cells, 32-bit elements ( 4-byte ), for a two dimensional array.</p></li>
+<li><p>The created variables, e.g. <code class="docutils literal notranslate"><span class="pre">my2array</span></code>,  should take two index number arguments representing the 0-based index of each dimension in the array and return the memory address where the 32-bit value is stored</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../../_images/datastruct_2d_GeneralXLS.png" src="../../../_images/datastruct_2d_GeneralXLS.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../../_images/datastruct_2d_4byteXLS.png" src="../../../_images/datastruct_2d_4byteXLS.png" />
+</figure>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Create the defining word <code class="docutils literal notranslate"><span class="pre">2ARRAY</span></code></span><a class="headerlink" href="#id14" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ ===================================================================
+<span class="linenos"> 2</span>\ TWO-DIMENSIONAL ARRAY OF 32-BIT ELEMENTS
+<span class="linenos"> 3</span>\ -------------------------------------------------------------------
+<span class="linenos"> 4</span>: 2ARRAY ( BUILDS: N1 N2 -- ) ( DOES: N1 N2 -- a-addr )
+<span class="linenos"> 5</span>&lt;BUILDS
+<span class="linenos"> 6</span>    DUP CELLS , *
+<span class="linenos"> 7</span>    HERE SWAP CELLS DUP ALLOT 0 FILL
+<span class="linenos"> 8</span>DOES&gt;
+<span class="linenos"> 9</span>    DUP @ 3 PICK * ROT CELLS + CELL+ + NIP
+<span class="linenos">10</span>;
+<span class="linenos">11</span>\ Build example  : 3 5 2ARRAY my2array  \ Creates a 15 element 2-dimensional 0-based array of 32-bit values
+<span class="linenos">12</span>\ Does example : $DEADBEEF 1 2 my2array !    \ Stores the value $DEADBEEF in the 8th element ( skip 5 elems from first row + 3rd elem in 2nd row... there is no need to ever calculate this yourself - only for explanation ).
+<span class="linenos">13</span>\ Does example : 2348 2 4 my2array ! \ Stores the value 2348 ( $92C ) in the last element of the array
+<span class="linenos">14</span>\ Does example : 1 2 my2array @ hex. \ Prints the value of the element from row 1, col 2
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BUILDS</span></code> code explained:</p>
+<ul>
+<li><p>The desied number of row cells (N1) and the number of columns cells (N2) should already be on the stack prior to calling <code class="docutils literal notranslate"><span class="pre">2ARRAY</span></code>. <em>Stack ( rows cols)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the cols value on the stack. <em>Stack ( rows cols cols )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELLS</span></code> multiplies the number of cols by four to get the number of bytes. Think of this value as the number of memory bytes needed for each row in the 2d array. <em>Stack ( rows cols colbytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">,</span></code> advances the dictionary pointer by one cell (4-bytes) and writes the number of column bytes per row into the cell. This is a permanent value that will be used in run-time to calculate the memory address of any given row/col. <em>Stack ( rows cols )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> multiplies rows by cols to get the total number of cells needed for memory storage. <em>Stack ( cellcnt )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HERE</span></code> puts the current dictionary memory address on the stack. i.e. the beginning of memory where we’ll start the array storage. <em>Stack ( cellcnt a-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWAP</span></code> moves cellcnt to the top of the stack. <em>Stack ( a-addr cellcnt )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELLS</span></code> calculates byte size of cellcnt, i.e. cellcnt * 4. <em>Stack ( a-addr arraybytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the array size value of the number of bytes just calculated. <em>Stack ( a-addr arraybytes arraybytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALLOT</span></code> advances the dictionary pointer by the number of bytes needed, i.e. it allocates rows * cols * 4 bytes to the new variable for storage. <em>Stack ( a-addr arraybytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> is the value we want to initialize all the storage bytes. The current memory storage has random values leftover. <em>Stack ( a-addr arraybytes 0 )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILL</span></code> takes three arguments ( c-addr u c ) which are already on the stack from the previous steps. u bytes are written with a value of c starting at c-addr. <em>Stack ( )</em></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOES&gt;</span></code> explained:</p>
+<ul>
+<li><p>The 0-based row and col index values should already be on the stack prior to calling variable name, e.g. <code class="docutils literal notranslate"><span class="pre">my2array</span></code>. <em>Stack ( row col )</em></p></li>
+<li><p>By default, when the variable name is executed, the starting address of the storage area is put on the stack. In our case, this is the beginning address of where we stored the number of column bytes per row. i.e. it’s one cell less than where the actual array data is stored. <em>Stack ( row col a-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code> duplicates the starting address on the stack. <em>Stack ( row col a-addr a-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> gets the 32-bit value stored at a-addr, which is the number of column bytes per row. <em>Stack ( row col a-addr colbytes )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">PICK</span></code> copies the row index to the top of the stack, will drop the original later. Normal Mecrisp doesn’t have <code class="docutils literal notranslate"><span class="pre">ROLL</span></code> unless using the ‘RA’ core. <em>Stack ( row col a-addr colbytes row )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> this is start of the magic that unwraps the 2d indices into a 1d storage. It multiplies the row index by number of column bytes per row. i.e. this is the first offset needed to get the correct memory address for the row/col given. <em>Stack ( row col a-addr rowoffset )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROT</span></code> puts the col index at the top of the stack. <em>Stack ( row a-addr rowoffset col )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELLS</span></code> calculates the bytes needed to move this many columns. i.e. col * 4. <em>Stack ( row a-add rowoffset colbyteoffset )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> this the second magic that unwraps the 2d indics into a 1d storage. It adds the column index ( in bytes ) to the bulk offset we already calculated for the ith row. <em>Stack ( row a-addr 1doffset )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CELL+</span></code> Because the address we have is not quite at the beginning of the array, add 4-bytes to the offset to account for the original cols per row memory. <em>Stack ( row a-addr totaloffset )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> add the total offset to the starting memory address to finally get the memory address of the row/col requested. <em>Stack ( row ele-addr )</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NIP</span></code> delete the original row value. ( ele-addr)*</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default" id="id15">
+<img alt="../../../_images/datastruct_2array.png" src="../../../_images/datastruct_2array.png" />
+<figcaption>
+<p><span class="caption-text"><em>…2ARRAY example. No value storage here, this is the machine code for creating 2Array variables</em></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Use the word <code class="docutils literal notranslate"><span class="pre">2ARRAY</span></code> to create a new variable called <code class="docutils literal notranslate"><span class="pre">my2array</span></code></span><a class="headerlink" href="#id16" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>\ my2array
+<span class="linenos">2</span>3 5 2ARRAY my2array      \ Create a new 3x5 array
+<span class="linenos">3</span>dump-word my2ARRAY       \ Inspect the new array
+<span class="linenos">4</span>$DEADBEEF 1 2 my2array ! \ Try storing a value using index values
+<span class="linenos">5</span>2348 2 4 my2array !      \ Try storing another value
+<span class="linenos">6</span>dump-word my2array       \ Inspect the array with stored values
+<span class="linenos">7</span>1 2 my2array @ hex.      \ Fetch the value stored at row 1, col 2
+</pre></div>
+</div>
+</div>
+<figure class="align-default" id="id17">
+<img alt="../../../_images/datastruct_my2array.png" src="../../../_images/datastruct_my2array.png" />
+<figcaption>
+<p><span class="caption-text"><em>Test Code results</em></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<hr class="docutils" />
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The book uses the word <code class="docutils literal notranslate"><span class="pre">RECORD</span></code>, but because of my background I’ve replaced it everywhere with the word <code class="docutils literal notranslate"><span class="pre">CLASS</span></code>. Semantically, it seems closer to what I’m used to for describing a template/container that holds other data.</p>
+</div>
+<p>The following words are used together to create classes that can hold multiple fields, variant fields, and subclasses.</p>
+<p>For me, the confusing part about all of this is that we are defining words that will be used to define other words. <code class="docutils literal notranslate"><span class="pre">CLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">FIELD</span></code>, <code class="docutils literal notranslate"><span class="pre">VARIANT</span></code>, <code class="docutils literal notranslate"><span class="pre">START-VARIANTS</span></code>, <code class="docutils literal notranslate"><span class="pre">END-VARIANTS</span></code>, <code class="docutils literal notranslate"><span class="pre">END-ALL-VARIANTS</span></code>, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, <code class="docutils literal notranslate"><span class="pre">END-CLASS</span></code>, and <code class="docutils literal notranslate"><span class="pre">1AFIELD</span></code> are words used to define the blueprint of a class. These words don’t create an instance of a class, i.e. they don’t create object from the classes, but rather they create the recipe needed whenever you eventually want to create objects of those class types. And, these words can be reused to create layouts of other classes. The classic example is that these words are used to define a recipe, say, chocolate-chip. They are used again if you want to create a recipe for oatmeal cookies. So, after using these words, you’ll have a new word named <code class="docutils literal notranslate"><span class="pre">CHOCOLATE-CHIP</span></code>, and another with the name <code class="docutils literal notranslate"><span class="pre">OATMEAL</span></code>. But, these are just recipes of cookies. You can’t find actual cookies in your recipe book, but you can find the recipe on how to make an actual cookie you can eat! A class is a recipe, an object is the cookie you made from using the recipe.</p>
+<p>The words <code class="docutils literal notranslate"><span class="pre">INSTANCE</span></code>, and <code class="docutils literal notranslate"><span class="pre">M-INSTANCE</span></code> are used to create actual instances of the class that was previously defined. Following the cookie example, these words are used to make actual cookies, <code class="docutils literal notranslate"><span class="pre">INSTANCE</span> <span class="pre">BIRTHDAY</span> <span class="pre">OF</span> <span class="pre">CHOCOLATE-CHIP</span></code> will make one chocolate-chip type cookie named birthday, while <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">M-INSTANCE</span> <span class="pre">VALENTINES</span> <span class="pre">OF</span> <span class="pre">OATMEAL</span></code> will make a dozen oatmeal cookie types named valentines. The new <code class="docutils literal notranslate"><span class="pre">BIRTHDAY</span></code> and <code class="docutils literal notranslate"><span class="pre">VALENTINES</span></code> words are where the actual data for those instances would be stored.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This could be another opportunity to change semantics. Instead of <code class="docutils literal notranslate"><span class="pre">INSTANCE</span></code>, it also makes sense to me to use the word <code class="docutils literal notranslate"><span class="pre">NEW</span></code>, so the above example would become <code class="docutils literal notranslate"><span class="pre">NEW</span> <span class="pre">BIRTHDAY</span> <span class="pre">OF</span> <span class="pre">CHOCOLATE-CHIP</span></code>. Heck, while we’re at it, change <code class="docutils literal notranslate"><span class="pre">OF</span></code> to <code class="docutils literal notranslate"><span class="pre">AS</span></code>, to become <code class="docutils literal notranslate"><span class="pre">NEW</span> <span class="pre">BIRTHDAY</span> <span class="pre">AS</span> <span class="pre">CHOCOLATE-CHIP</span></code>. However, my goal is not to recreate an object oriented language verbatim, so I’ll limit the semantic changes to just <code class="docutils literal notranslate"><span class="pre">CLASS</span></code> and leave the other words the same.</p>
+</div>
+<p>Another way to explain it is that the above words could be included in a common file called objects.fs file that gets written to every microcrontroller as part of a core library. Then, actual project code would use those words to create new classes specifically meant for your application, i.e. <code class="docutils literal notranslate"><span class="pre">CHOCOLATE-CHIP</span></code> and <code class="docutils literal notranslate"><span class="pre">OATMEAL</span></code>. Once those classes are defined, you’d then create whatever instances are required and store/read data from those, i.e. <code class="docutils literal notranslate"><span class="pre">BIRTHDAY</span></code> and <code class="docutils literal notranslate"><span class="pre">VALENTINES</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">CLASS</span> <span class="n">VEHICLE</span>
+<span class="linenos">2</span>  <span class="mi">32</span> <span class="n">FIELD</span> <span class="n">NAME</span>
+<span class="linenos">3</span>   <span class="mi">8</span> <span class="n">FIELD</span> <span class="n">PLATE</span>
+<span class="linenos">4</span><span class="n">END</span><span class="o">-</span><span class="n">CLASS</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">VEHICLE</span></code> is now the name of a class with two fields. <code class="docutils literal notranslate"><span class="pre">NAME</span></code> is a 32-byte field that is now part of a <code class="docutils literal notranslate"><span class="pre">VEHICLE</span></code>. <code class="docutils literal notranslate"><span class="pre">PLATE</span></code> is an 8-byte field to store the license plate number of of the <code class="docutils literal notranslate"><span class="pre">VEHICLE</span></code>. The above code is just a recipe, to create objects from the class, the <code class="docutils literal notranslate"><span class="pre">INSTANCE</span></code> word is used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INSTANCE</span> <span class="n">MODEL_T</span> <span class="n">OF</span> <span class="n">VEHICLE</span>
+</pre></div>
+</div>
+<p>A new object of <code class="docutils literal notranslate"><span class="pre">VEHICLE</span></code> has been created called <code class="docutils literal notranslate"><span class="pre">MODEL_T</span></code>. To get the values stored in the fields, do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_T</span> <span class="n">NAME</span>
+<span class="n">MODEL_T</span> <span class="n">PLATE</span>
+</pre></div>
+</div>
+<p>To create multiple vehicles, an array of objects can be created like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="n">M</span><span class="o">-</span><span class="n">INSTANCE</span> <span class="n">FLEET</span> <span class="n">OF</span> <span class="n">VEHICLE</span>
+</pre></div>
+</div>
+<p>This creates 10 instances of the class <code class="docutils literal notranslate"><span class="pre">VEHICLE</span></code> as a 0-based index from 0 to 9. To print out the name of the 5th vehicle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="n">FLEET</span> <span class="n">NAME</span> <span class="mi">32</span> <span class="n">TYPE</span>
+</pre></div>
+</div>
+<p>But there’s more! Classes can have variants…</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CLASS</span> <span class="n">VEHICLE</span>
+   <span class="mi">32</span> <span class="n">FIELD</span> <span class="n">NAME</span>
+    <span class="mi">8</span> <span class="n">FIELD</span> <span class="n">LICENSE_PLATE</span>
+   <span class="mi">16</span> <span class="n">FIELD</span> <span class="n">COLOR</span>
+   <span class="n">START</span><span class="o">-</span><span class="n">VARIANTS</span>
+      <span class="n">VARIANT</span>
+</pre></div>
+</div>
+<section id="class">
+<h3>CLASS<a class="headerlink" href="#class" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: CLASS ( BUILDS: -- ) ( DOES: -- N ) \ N is number of bytes in class
+<span class="linenos">2</span>    &lt;BUILDS
+<span class="linenos">3</span>        HERE FILL-ADDR !   \ save first data cell address in variable
+<span class="linenos">4</span>        0 CUR-SIZE !       \ variable could have been used since declaration, set to 0
+<span class="linenos">5</span>        0 ,                \ initialize total class size to 0 bytes
+<span class="linenos">6</span>    DOES&gt;
+<span class="linenos">7</span>        @                  \ return total class size in bytes to stack
+<span class="linenos">8</span>;
+</pre></div>
+</div>
+</section>
+<section id="field">
+<h3>FIELD<a class="headerlink" href="#field" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>: FIELD ( BUILDS: N -- ) ( DOES: A1 - A2 ) \ N is number of bytes to allocate to FIELD
+<span class="linenos"> 2</span>                                        \ A1 is the base address of the class
+<span class="linenos"> 3</span>                                        \ A2 is the address of the field in the class
+<span class="linenos"> 4</span>    &lt;BUILDS
+<span class="linenos"> 5</span>        CUR-SIZE DUP @  \ Duplicate cur-size variable address and put it&#39;s stored value on stack
+<span class="linenos"> 6</span>        ,               \ Store the cur-size in the first data cell of this field
+<span class="linenos"> 7</span>        +!              \ Add N to cur-size variable
+<span class="linenos"> 8</span>    DOES&gt;
+<span class="linenos"> 9</span>        @ +             \ Get value of
+<span class="linenos">10</span>;
+</pre></div>
+</div>
+</section>
+<section id="variant">
+<h3>VARIANT<a class="headerlink" href="#variant" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: VARIANT ( BUILDS: -- ) ( DOES: -- )
+<span class="linenos">2</span>    CUR-SIZE @ VAR-START !
+<span class="linenos">3</span>;
+</pre></div>
+</div>
+</section>
+<section id="start-variants">
+<h3>START-VARIANTS<a class="headerlink" href="#start-variants" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: START-VARIANTS
+<span class="linenos">2</span>    0 %VAR-END !
+<span class="linenos">3</span>;
+</pre></div>
+</div>
+</section>
+<section id="end-variant">
+<h3>END-VARIANT<a class="headerlink" href="#end-variant" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: END-VARIANT ( )
+<span class="linenos">2</span>    CUR-SIZE DUP &gt;R @
+<span class="linenos">3</span>    %VAR-END DUP &gt;R @
+<span class="linenos">4</span>    MAX R&gt; !
+<span class="linenos">5</span>    VAR-START @ R&gt; !
+<span class="linenos">6</span>;
+</pre></div>
+</div>
+</section>
+<section id="end-all-variants">
+<h3>END-ALL-VARIANTS<a class="headerlink" href="#end-all-variants" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: END-ALL-VARIANTS ( )
+<span class="linenos">2</span>    %VAR-END @ CUR-SIZE !
+<span class="linenos">3</span>;
+</pre></div>
+</div>
+</section>
+<section id="insert">
+<h3>INSERT<a class="headerlink" href="#insert" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: INSERT ( BUILDS: -- ) ( DOES: A1 -- A2 ) \ A1 is base address of the class
+<span class="linenos">2</span>                                        \ A2 is address of the sub-class in class
+<span class="linenos">3</span>    &lt;BUILDS
+<span class="linenos">4</span>        BL PARSE DROP &#39; EXECUTE
+<span class="linenos">5</span>        CUR-SIZE DUP @ , +!
+<span class="linenos">6</span>    DOES&gt;
+<span class="linenos">7</span>        @ +
+<span class="linenos">8</span>;
+</pre></div>
+</div>
+</section>
+<section id="end-class">
+<h3>END-CLASS<a class="headerlink" href="#end-class" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: END-CLASS ( BUILDS: -- ) ( DOES: -- )
+<span class="linenos">2</span>    CUR-SIZE @ FILL-ADDR @ !
+<span class="linenos">3</span>;
+</pre></div>
+</div>
+</section>
+<section id="afield">
+<h3>1AFIELD<a class="headerlink" href="#afield" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>: 1AFIELD ( BUILDS: N1 N2 -- ) ( A1 N -- A2 )
+<span class="linenos">2</span>    &lt;BUILDS
+<span class="linenos">3</span>        DUP , CUR-SIZE DUP @ ,
+<span class="linenos">4</span>        &gt;R * R&gt; +!
+<span class="linenos">5</span>    DOES&gt;
+<span class="linenos">6</span>        DUP @ ROT * SWAP 2 + @ + +
+<span class="linenos">7</span>;
+</pre></div>
+</div>
+</section>
+<section id="instance">
+<h3>INSTANCE<a class="headerlink" href="#instance" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">:</span> <span class="n">INSTANCE</span> <span class="p">(</span> <span class="n">BUILDS</span><span class="p">:</span> <span class="o">--</span> <span class="p">)</span> <span class="p">(</span> <span class="n">DOES</span><span class="p">:</span> <span class="o">--</span> <span class="n">A</span> <span class="p">)</span>
+<span class="linenos">2</span>    <span class="o">&lt;</span><span class="n">BUILDS</span>
+<span class="linenos">3</span>        <span class="n">BL</span> <span class="n">PARSE</span> <span class="n">DROP</span> <span class="s1">&#39; EXECUTE ALLOT</span>
+<span class="linenos">4</span>    <span class="n">DOES</span><span class="o">&gt;</span>
+<span class="linenos">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="m-instance">
+<h3>M-INSTANCE<a class="headerlink" href="#m-instance" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">:</span> <span class="n">M</span><span class="o">-</span><span class="n">INSTANCE</span> <span class="p">(</span> <span class="n">BUILDS</span><span class="p">:</span> <span class="n">N</span> <span class="o">--</span> <span class="p">)</span> <span class="p">(</span> <span class="n">N</span> <span class="o">--</span> <span class="n">A</span> <span class="p">)</span>
+<span class="linenos">2</span>    <span class="o">&lt;</span><span class="n">BUILDS</span>
+<span class="linenos">3</span>        <span class="n">BL</span> <span class="n">PARSE</span> <span class="n">DROP</span>
+<span class="linenos">4</span>        <span class="s1">&#39; EXECUTE DUP , * ALLOT</span>
+<span class="linenos">5</span>    <span class="n">DOES</span><span class="o">&gt;</span>
+<span class="linenos">6</span>        <span class="n">DUP</span> <span class="o">@</span> <span class="n">ROT</span> <span class="o">*</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span>
+<span class="linenos">7</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this heading"></a></h2>
+<section id="enum">
+<h3>ENUM<a class="headerlink" href="#enum" title="Permalink to this heading"></a></h3>
+<p>An interesting use of nested <code class="docutils literal notranslate"><span class="pre">&lt;BUILDS</span></code> <code class="docutils literal notranslate"><span class="pre">DOES&gt;</span></code> to auto assign index values to an enumeration is shown on the site <a class="reference external" href="https://excamera.com/sphinx/article-forth-enum.html">excamera Forth enumerant</a>, and the code originally published in <a class="reference external" href="http://www.forth.org/fd/FD-V14N1.pdf">Forth Dimensions Vol 14 issue 1</a>.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">enum</span></code> doesn’t really save any memory, actually it uses more because the <code class="docutils literal notranslate"><span class="pre">enum</span></code> word itself must be defined. Each enumerated value becomes a word in the dictionary. None of the enumerations are aware of the enumeration group or other enumerated values. The code created from enum is no different than using individual <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">CONSTANT</span> <span class="pre">name</span></code> lines.</p>
+<p>However, the advantage of using <code class="docutils literal notranslate"><span class="pre">enum</span></code> is the index values get assigned automatically so you don’t have to keep track of indexes or re-number them if changing the order or inserting new enumerations during coding.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>\ Automatic 0-based enumeration
+<span class="linenos"> 2</span>\ Note: Nested &lt;BUILDS DOES&gt; creates the enumerated values as words
+<span class="linenos"> 3</span>: enum
+<span class="linenos"> 4</span>    &lt;BUILDS                  \ Creates a word with header and name of enum
+<span class="linenos"> 5</span>        0 ,                  \ Initalize data cell with 0 at build-time
+<span class="linenos"> 6</span>    DOES&gt;                    \ Puts data cell address on stack at run-time
+<span class="linenos"> 7</span>        &lt;BUILDS              \ Creates a new enumerated value word with header
+<span class="linenos"> 8</span>            DUP @ 1 rot +! , \ Gets current enum value and increments by 1 at build-time
+<span class="linenos"> 9</span>        DOES&gt;                \ Puts enumerated value address on stack at run-time
+<span class="linenos">10</span>            @                \ Gets value of requested enumeration at run=time
+<span class="linenos">11</span>;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>\ <span class="n">Example</span> <span class="n">usage</span> <span class="n">of</span> <span class="n">enum</span>
+<span class="linenos">2</span><span class="n">enum</span> <span class="n">mycolor</span>                 \ <span class="n">Runs</span> <span class="mi">1</span><span class="n">st</span> <span class="o">&lt;</span><span class="n">BUILDS</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">DOES</span><span class="o">&gt;</span>
+<span class="linenos">3</span><span class="n">mycolor</span> <span class="n">myred</span>                \ <span class="n">Runs</span> <span class="mi">2</span><span class="n">nd</span> <span class="o">&lt;</span><span class="n">BUILDS</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">DOES</span><span class="o">&gt;</span>
+<span class="linenos">4</span><span class="n">mycolor</span> <span class="n">mygreen</span>              \ <span class="n">Runs</span> <span class="mi">2</span><span class="n">nd</span> <span class="o">&lt;</span><span class="n">BUILDS</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">DOES</span><span class="o">&gt;</span>
+<span class="linenos">5</span><span class="n">mycolor</span> <span class="n">myblue</span>               \ <span class="n">Runs</span> <span class="mi">2</span><span class="n">nd</span> <span class="o">&lt;</span><span class="n">BUILDS</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">DOES</span><span class="o">&gt;</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="n">myred</span> <span class="o">.</span>                      \ <span class="n">Runs</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">DOES</span><span class="o">&gt;</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">Puts</span> <span class="n">value</span> <span class="n">on</span> <span class="n">stack</span>
+<span class="linenos">8</span><span class="n">mygreen</span> <span class="o">.</span>                    \ <span class="n">Runs</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">DOES</span><span class="o">&gt;</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">Puts</span> <span class="n">value</span> <span class="n">on</span> <span class="n">stack</span>
+<span class="linenos">9</span><span class="n">myblue</span> <span class="o">.</span>                     \ <span class="n">Runs</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">DOES</span><span class="o">&gt;</span> <span class="n">code</span> <span class="n">above</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">Puts</span> <span class="n">value</span> <span class="n">on</span> <span class="n">stack</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no reverse lookup because the enumerations aren’t connected in memory, they are individual words. So, for instance, to save memory the color index value 0,1,2… might be stored with an object instead of the color text myred, mygreen, and myblue. But there would be no way to lookup the index value later to determine what color was stored. If a reverse lookup is needed, then use an array data structure of some type instead.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../variables/variables.html" class="btn btn-neutral float-left" title="Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../sourcecode/sourcecode.html" class="btn btn-neutral float-right" title="Source Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Brett Olson, released under the GPL V3. Last updated on May 17, 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
