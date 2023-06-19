@@ -1,15 +1,15 @@
-Compiler
-========
+Source Code
+===========
 
-I was able to compile my own version of mecrisp-stellaris-forth from source code. I used Windows Subsystem for Linux (WSL) installed with the arm compiler and make.
+I was able to compile my own modified version of mecrisp-stellaris-forth from source code. I used Windows Subsystem for Linux (WSL) installed with the arm compiler and make.
 
-Honestly, it's always felt like black box voodoo and beyond my skills to dabble in the source code and compiling my own version of mecrisp never seemed possible. But, It turned out to be extremely easy to do, and the source files Matthias includes in the forth zip file makes things super simple. The basic steps are:
+Honestly, it's always felt like black box voodoo and beyond my skills to dabble in the source code and compiling my own version of mecrisp never seemed possible. But, It turned out to be extremely easy to do, and the source files Matthias includes in the forth zip file makes things super simple. The source code is found in the ``mecrisp-stellaris-source`` folder of the zip file conents. The basic steps are:
 
 #. Make a copy of the `common` folder, put it anywhere convenient.
 #. Copy the source folder for your specific microcrontroller, keep same relative path to common.
 #. Make any edits to the source code.
 #. Open a WSL command window and navigate to your source code folder.
-#. Run `make` the command line.
+#. Run `make` on the WSL command line.
 #. Done, flash the .bin file to your microcrontroller!
 
 .. note::
@@ -36,6 +36,59 @@ I believe Make comes installed with WSL, otherwise you may need to install it.
 
 ----
 
+Make
+----
+
+The Makefile for the source code begins compiling with the specfic board.s file, e.g. for the BluePill it's mecrisp-stellaris-stm32f103.s
+
+Tracing the file calls starting with mecrisp-stellaris-stm32f103.s, this is the call tree...
+
+* mecrisp-stellaris-stm32f103.s
+
+    * datastackandmacros.s
+
+* mecrisp-stellaris-stm32f103.s
+
+    * vector.s
+
+        * vectors-common.s
+
+    * vector.s
+
+* mecrisip-stellaris-stme32f103.s 
+
+    * forth-core.s
+
+        * If using registerallocator (RA) ra-infrastructure.s
+
+        * If using registerallocater (RA) ra-tools.
+
+        * double.s
+
+        * stackjugglers.s
+
+        * logic.s
+
+
+Memory
+------
+
+To illustrate the memory layout of forth code, it's helpful to analyze the source code to find all references to memory. 
+
+#. mecrisp-stellaris-stm32f103.s
+    #. RamAnfang             0x20000000 ( Start of RAM )
+    #. RamEnde               0x20005000 ( End of RAM )
+    #. Kernshutzadresse      0x20000000 ( Core protection address )
+    #. FlashDictionaryanfang 0x00004000 ( Flash-Dictionary begin )
+    #. FlashDictionaryEnde   0x00010000 ( Flash-Dictionary end )
+    #. Backlinkgrenze        RamAnfang  ( Backlink boundary )
+    #.  o
+     
+#. vector.s
+    #. hidden
+
+----
+
 Changes
 -------
 
@@ -44,7 +97,7 @@ Common changes
 Flash Size
 **********
 
-After flashing the original .bin file, run the ``words`` command in forth to see a printout of the core dictionary. i.e. A fresh board flashed with mecrisp-stellaris-forth. Notice the dictionary starts at 00000150 ( after the vector table ) and ends at 00003BAA ( which is why 16 kb reserved, i.e. up to 00004000 ).
+After flashing the original pre-compiled .bin file, run the ``words`` command in forth to see a printout of the core dictionary. i.e. A fresh board flashed with mecrisp-stellaris-forth. Notice the dictionary starts at 00000150 ( after the vector table ) and ends at 00003BAA ( which is why 16 kb reserved, i.e. up to 00004000 ).
 
 .. figure:: compiler_rawflash.png
 

@@ -35,7 +35,7 @@ div.highlight-default.notranslate {
 
 /* does not affect code block */
 html {
-    font-size: 1.50em;
+    font-size: 1.00em;
 }
 
 code {
@@ -51,7 +51,7 @@ h1 {
 }
 
 li {
-    line-height: 1.5em;
+    line-height: 1.0em;
 }
 
 li::marker {

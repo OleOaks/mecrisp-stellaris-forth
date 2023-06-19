@@ -10,5 +10,6 @@ Forth
    memory/memory
    variables/variables
    datastructures/datastructures
-   compiler/compiler
+   sourcecode/sourcecode
+   sourcecode/analyzesourcecode
 

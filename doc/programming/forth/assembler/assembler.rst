@@ -14,4 +14,3 @@ Variable v Constant
 Let's look under the hood and see what the difference is between a variable and a constant as they are stored in the dictionary.
 
 
-
